@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
-import { CircleQuestionMark, ChevronLeft, ChevronRight } from "lucide-react";
+import { CircleQuestionMark } from "lucide-react";
 import GalleryControls from "./GalleryControls";
 import GalleryImages from "./GalleryImages";
 import Toast from "../toast";

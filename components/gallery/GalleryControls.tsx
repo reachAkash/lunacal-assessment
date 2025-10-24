@@ -1,13 +1,6 @@
 "use client";
 
-import React from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
-  Plus,
-} from "lucide-react";
+import { ArrowLeft, ArrowRight, Plus } from "lucide-react";
 import NavButton from "./NavButton";
 import type { GalleryControlsProps } from "@/utils/types";
 
