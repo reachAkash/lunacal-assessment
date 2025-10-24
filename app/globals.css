@@ -24,3 +24,33 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Hide the scrollbar buttons (arrows) */
+.custom-scrollbar::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Track invisible */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Thumb with gradient */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: linear-gradient(
+    to bottom,
+    #e5e5e5,
+    #6b6b6b
+  ); /* bg-gray-200 → bg-gray-500 */
+  box-shadow: 0 0 4px rgba(155, 155, 155, 0.7); /* subtle grayish shadow */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #d4d4d4, #505050);
+  box-shadow: 0 0 6px rgba(155, 155, 155, 0.9); /* slightly stronger shadow on hover */
+}
