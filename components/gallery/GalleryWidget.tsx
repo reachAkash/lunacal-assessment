@@ -6,6 +6,7 @@ import { CircleQuestionMark } from "lucide-react";
 import GalleryControls from "./GalleryControls";
 import GalleryImages from "./GalleryImages";
 import Toast from "../toast";
+import HorizontalLine from "../HorizontalLine";
 
 export default function GalleryWidget() {
   const [images, setImages] = useState<string[]>([
@@ -31,31 +32,34 @@ export default function GalleryWidget() {
   };
 
   return (
-    <div className="flex gap-3 lg:gap-5 bg-gray-400/20 rounded-3xl p-3 sm:p-4 shadow-xl">
-      <div className="flex flex-col justify-between items-center h-full">
-        <CircleQuestionMark className="self-start mb-4" />
-        <div className="flex-1 flex items-center">
-          <Image src="/square-list.png" alt="" height={20} width={20} />
+    <>
+      <div className="flex gap-3 lg:gap-5 bg-gray-400/20 rounded-3xl p-3 sm:p-4 shadow-xl">
+        <div className="flex flex-col justify-between items-center h-full">
+          <CircleQuestionMark className="self-start mb-4" />
+          <div className="flex-1 flex items-center">
+            <Image src="/square-list.png" alt="" height={20} width={20} />
+          </div>
         </div>
-      </div>
-      <div>
-        <div className="flex items-center justify-between mb-6">
-          <button className="px-4 lg:px-8 py-3 text-xs lg:text-base rounded-2xl bg-[#171717] text-white font-medium">
-            Gallery
-          </button>
-          <GalleryControls
-            onAddImage={handleAdd}
-            onPrevious={handlePrev}
-            onNext={handleNext}
-          />
+        <div>
+          <div className="flex items-center justify-between mb-6">
+            <button className="px-4 lg:px-8 py-3 text-xs lg:text-base rounded-2xl bg-[#171717] text-white font-medium">
+              Gallery
+            </button>
+            <GalleryControls
+              onAddImage={handleAdd}
+              onPrevious={handlePrev}
+              onNext={handleNext}
+            />
+          </div>
+          <GalleryImages images={images} currentIndex={currentIndex} />
         </div>
-        <GalleryImages images={images} currentIndex={currentIndex} />
+        <Toast
+          message={toastMessage}
+          isVisible={showToast}
+          onClose={() => setShowToast(false)}
+        />
       </div>
-      <Toast
-        message={toastMessage}
-        isVisible={showToast}
-        onClose={() => setShowToast(false)}
-      />
-    </div>
+      <HorizontalLine />
+    </>
   );
 }
